@@ -1,6 +1,6 @@
 services:
   openclaw:
-    image: openclaw/openclaw:latest
+    build: .
     container_name: jarvis
     restart: unless-stopped
     ports:
