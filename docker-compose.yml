@@ -1,7 +1,7 @@
 services:
   openclaw:
     image: openclaw/openclaw:latest
-    container_name: openclaw-pa
+    container_name: jarvis
     restart: unless-stopped
     ports:
       - "18789:18789"

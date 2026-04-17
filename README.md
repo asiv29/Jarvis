@@ -24,7 +24,7 @@ Kai talks to you via **Telegram** (or WhatsApp). It feels like texting your PA.
 
 ```bash
 git clone <your-repo-url>
-cd openclaw-pa
+cd jarvis
 ./scripts/setup.sh
 ```
 
@@ -46,7 +46,7 @@ Kai will ask about your university courses, internship, schedule preferences, an
 ## Project structure
 
 ```
-openclaw-pa/
+jarvis/
 ├── docker-compose.yml          # Docker setup
 ├── .env.example                # Environment template
 ├── config/
