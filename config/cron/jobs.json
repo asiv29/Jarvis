@@ -1,45 +1,153 @@
-[
-  {
-    "id": "daily-briefing",
-    "name": "Morning Briefing",
-    "schedule": "0 8 * * *",
-    "skill": "daily-briefing",
-    "description": "Sends Akshay his daily morning briefing at 8am",
-    "enabled": true
-  },
-  {
-    "id": "midday-checkin",
-    "name": "Midday Check-in",
-    "schedule": "0 12 * * *",
-    "skill": "goal-coach",
-    "context": "midday",
-    "description": "Midday accountability check-in — asks what he's working on",
-    "enabled": true
-  },
-  {
-    "id": "evening-checkin",
-    "name": "Evening Check-in",
-    "schedule": "0 21 * * *",
-    "skill": "goal-coach",
-    "context": "evening",
-    "description": "Evening wind-down check-in — logs the day and preps for tomorrow",
-    "enabled": true
-  },
-  {
-    "id": "weekly-review",
-    "name": "Weekly Review",
-    "schedule": "0 9 * * SUN",
-    "skill": "weekly-review",
-    "description": "Sunday morning deep reflection on the week at uni and internship",
-    "enabled": true
-  },
-  {
-    "id": "wednesday-nudge",
-    "name": "Mid-week Nudge",
-    "schedule": "0 15 * * WED",
-    "skill": "goal-coach",
-    "context": "midweek",
-    "description": "Wednesday afternoon check — are you on track for the week?",
-    "enabled": true
-  }
-]
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "70bc0f85-54c4-4e26-8cc7-defcc559de67",
+      "name": "daily-briefing",
+      "description": "Morning briefing — calendar, tasks, push to start",
+      "enabled": true,
+      "createdAtMs": 1776441963666,
+      "updatedAtMs": 1776442072010,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the daily-briefing skill. Read MEMORY.md and USER.md first. Send Akshay his morning briefing.",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018"
+      },
+      "state": {
+        "nextRunAtMs": 1776463200000,
+        "lastRunAtMs": 1776442011994,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 60016,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "afc35e04-69bc-4afe-917f-1d0846c0eedf",
+      "name": "midday-checkin",
+      "description": "Midday accountability check — are you on track?",
+      "enabled": true,
+      "createdAtMs": 1776441980206,
+      "updatedAtMs": 1776441980206,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 12 * * *",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the goal-coach skill for midday check-in. Ask Akshay what he's working on and if he's on track.",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018"
+      },
+      "state": {
+        "nextRunAtMs": 1776477600000
+      }
+    },
+    {
+      "id": "89e60625-6496-4fa7-9211-7dd9b493f0d6",
+      "name": "evening-checkin",
+      "description": "Evening wind-down — log the day, prep tomorrow",
+      "enabled": true,
+      "createdAtMs": 1776441985413,
+      "updatedAtMs": 1776441985413,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * *",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the goal-coach skill for evening check-in. Ask Akshay how today went and what's first tomorrow.",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018"
+      },
+      "state": {
+        "nextRunAtMs": 1776510000000
+      }
+    },
+    {
+      "id": "08cf6079-b03e-41b4-b129-c1a0611f97c9",
+      "name": "weekly-review",
+      "description": "Sunday deep reflection on uni + internship week",
+      "enabled": true,
+      "createdAtMs": 1776441990540,
+      "updatedAtMs": 1776441990540,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * SUN",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the weekly-review skill. Read the past 7 days of memory notes. Send Akshay a full weekly review.",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018"
+      },
+      "state": {
+        "nextRunAtMs": 1776553200000
+      }
+    },
+    {
+      "id": "23365265-4174-4215-9cc5-232c48196db8",
+      "name": "wednesday-nudge",
+      "description": "Mid-week check — on track for the week?",
+      "enabled": true,
+      "createdAtMs": 1776441995710,
+      "updatedAtMs": 1776441995710,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 15 * * WED",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the goal-coach skill for a mid-week check. Ask Akshay if he's on track for his weekly goals.",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018"
+      },
+      "state": {
+        "nextRunAtMs": 1776834000000
+      }
+    }
+  ]
+}

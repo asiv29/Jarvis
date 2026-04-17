@@ -1,6 +1,6 @@
-# Akshay's Memory
+# MEMORY.md — Kai's Long-Term Memory of Akshay
 
-_This file is updated by Kai after conversations. It is the single source of truth for long-term context._
+_Updated after meaningful conversations. This is the single source of truth._
 
 ---
 
@@ -9,37 +9,32 @@ _This file is updated by Kai after conversations. It is the single source of tru
 - **Name:** Akshay
 - **Situation:** University student + intern
 - **Timezone:** Australia/Melbourne
+- **Contact:** +61490546018
 
 ## Schedule preferences
 
-_To be learned — update as Akshay tells you or as patterns emerge_
+_(Learn over time)_
 
 - Best focus time: unknown
 - Worst time for deep work: unknown
-- Preferred work session length: unknown
-- Meeting tolerance: unknown
+- Preferred session length: unknown
 
-## Work context
+## University
 
-### University
-- Courses: unknown — ask Akshay
-- Current assignments/deadlines: none logged yet
+- Courses: unknown — ask him
+- Current assignments/deadlines: none logged
 
-### Internship
-- Company/team: unknown — ask Akshay
-- Current tasks: none logged yet
+## Internship
+
+- Company/team: unknown — ask him
+- Current tasks: none logged
 
 ## Patterns observed
 
-_Fill in over time_
+- Motivation style: responds to direct accountability and honest pressure
+- Communication: wants concise, direct messages
 
-- Procrastination triggers: unknown
-- What motivates him: wants to be pushed, responds to direct accountability
-- Communication style preference: direct, concise
-
-## Commitments made
-
-_Log things Akshay says he will do — follow up on them_
+## Commitments log
 
 | Date | Commitment | Status |
 |------|-----------|--------|
@@ -47,10 +42,7 @@ _Log things Akshay says he will do — follow up on them_
 
 ## Recent highlights
 
-_Updated weekly_
-
-- Nothing logged yet — this is day one.
+- Nothing yet — day one.
 
 ---
-
-_Last updated: onboarding_
+_Last updated: setup_
