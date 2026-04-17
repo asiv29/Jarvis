@@ -1,0 +1,6 @@
+.env
+workspace/memory/*.md
+config/cron/jobs.json.bak
+*.log
+.DS_Store
+node_modules/

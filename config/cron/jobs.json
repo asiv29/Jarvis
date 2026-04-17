@@ -1,0 +1,45 @@
+[
+  {
+    "id": "daily-briefing",
+    "name": "Morning Briefing",
+    "schedule": "0 8 * * *",
+    "skill": "daily-briefing",
+    "description": "Sends Akshay his daily morning briefing at 8am",
+    "enabled": true
+  },
+  {
+    "id": "midday-checkin",
+    "name": "Midday Check-in",
+    "schedule": "0 12 * * *",
+    "skill": "goal-coach",
+    "context": "midday",
+    "description": "Midday accountability check-in — asks what he's working on",
+    "enabled": true
+  },
+  {
+    "id": "evening-checkin",
+    "name": "Evening Check-in",
+    "schedule": "0 21 * * *",
+    "skill": "goal-coach",
+    "context": "evening",
+    "description": "Evening wind-down check-in — logs the day and preps for tomorrow",
+    "enabled": true
+  },
+  {
+    "id": "weekly-review",
+    "name": "Weekly Review",
+    "schedule": "0 9 * * SUN",
+    "skill": "weekly-review",
+    "description": "Sunday morning deep reflection on the week at uni and internship",
+    "enabled": true
+  },
+  {
+    "id": "wednesday-nudge",
+    "name": "Mid-week Nudge",
+    "schedule": "0 15 * * WED",
+    "skill": "goal-coach",
+    "context": "midweek",
+    "description": "Wednesday afternoon check — are you on track for the week?",
+    "enabled": true
+  }
+]
