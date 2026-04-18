@@ -1,42 +1,53 @@
 ---
 name: work-tracker
-description: Logs a work session when Akshay reports what he's been working on — categorises it as uni or internship, stores it in daily memory, and acknowledges progress
-tags: [productivity, tracking, logging]
+description: Logs any activity when Akshay reports what he's done — uni, GTM work, gym, social, food, mental health, or side projects. Stores to daily memory and updates progress.
+tags: [productivity, tracking, logging, life]
 ---
 
 # Work Tracker
 
-Triggered when Akshay says something like:
-- "Log that I worked on X for Y hours"
-- "Just finished X"
-- "Done with X"
-- "I spent the morning on X"
+Triggered when Akshay says anything like:
+- "Log that I worked on X"
+- "Just finished X" / "Done with X"
+- "Hit the gym" / "Trained today"
+- "Had lunch/dinner" / "Meal prepped"
+- "Caught up with [person]"
+- "Feeling [state]"
+- "Shipped X at work"
+
+## Domains to track
+
+| Domain | Examples |
+|---|---|
+| **uni** | assignment, study session, lecture, exam prep |
+| **gtm** | pipeline task, campaign, meeting, deliverable, research |
+| **gym** | workout, run, training session |
+| **social** | catch-up, dinner, call with friends/family |
+| **food** | meal, prep, eating well or skipping |
+| **mental** | how he's feeling, stress level, energy |
+| **project** | side builds (Jarvis, lapser_dashboard, etc.) |
 
 ## What to do
 
-1. Extract:
-   - **Task:** what he worked on
-   - **Category:** uni or internship (ask if unclear)
-   - **Duration:** how long (estimate if not given)
-   - **Outcome:** what he finished or produced (ask if not mentioned)
-
+1. Identify the domain and what was done
 2. Log to `memory/YYYY-MM-DD.md`:
 ```
-- [TIME] Work session: [CATEGORY] — [TASK] ([DURATION])
-  Outcome: [what was produced/completed]
+- [TIME] [DOMAIN]: [what was done] ([duration if given])
+  Outcome: [what was produced or achieved]
+```
+3. If it closes a commitment in MEMORY.md, mark it done
+4. Respond in JARVIS voice:
+
+```
+Logged, sir. [One dry, specific acknowledgement.]
+
+Today's log: [X] uni · [X] GTM · [X] gym · [X] life
 ```
 
-3. Update commitments table in `MEMORY.md` if this work closes out a commitment
+## Closing note
 
-4. Respond briefly:
-```
-Logged. [One specific, genuine acknowledgement — e.g. "That report's been sitting there for a while, good to get it done."]
+If he's logged across 3+ domains in a day:
+> "Productive day across the board, sir. That's worth noting."
 
-Running total today: [X] hours logged.
-```
-
-## Edge cases
-
-- If he logs work but the outcome is vague ("did some stuff"), ask: "What specifically did you produce or move forward?"
-- If it's the third session logged today, add: "Strong day — [total hours] hours of real work."
-- If he hasn't logged anything by 6pm, the goal-coach skill handles the nudge — don't double-up
+If gym + study + work all in one day:
+> "Full day, sir. Noted."

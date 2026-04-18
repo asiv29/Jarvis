@@ -169,7 +169,7 @@
       "name": "daily-briefing",
       "enabled": true,
       "createdAtMs": 1776513003299,
-      "updatedAtMs": 1776513132050,
+      "updatedAtMs": 1776513971312,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -191,10 +191,10 @@
       },
       "state": {
         "nextRunAtMs": 1776549600000,
-        "lastRunAtMs": 1776513112478,
+        "lastRunAtMs": 1776513955120,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 19572,
+        "lastDurationMs": 16192,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -321,7 +321,7 @@
       "name": "whatsapp-watchdog",
       "enabled": true,
       "createdAtMs": 1776513102637,
-      "updatedAtMs": 1776513102637,
+      "updatedAtMs": 1776515532851,
       "schedule": {
         "kind": "every",
         "everyMs": 1200000,
@@ -340,7 +340,14 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1776514302637
+        "nextRunAtMs": 1776516702649,
+        "lastRunAtMs": 1776515502649,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 30202,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "lastError": "Channel is required when multiple channels are configured: telegram, whatsapp Set delivery.channel explicitly or use a main session with a previous channel."
       }
     },
     {
@@ -395,6 +402,151 @@
       },
       "state": {
         "nextRunAtMs": 1776603600000
+      }
+    },
+    {
+      "id": "53cdfa15-4fe2-4b2f-9683-54e5261041ab",
+      "name": "daily-briefing",
+      "enabled": true,
+      "createdAtMs": 1776514307327,
+      "updatedAtMs": 1776514307327,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "CRITICAL: Output ONLY the WhatsApp message text. No reasoning, no planning, no 'I will craft...', no meta-commentary. The message starts on the first word. Speak as JARVIS from Iron Man — address him as 'sir', be dry, precise, British. Read MEMORY.md and USER.md from workspace first. Then write the morning briefing: today's date and day, any deadlines or commitments from MEMORY.md, weather if relevant, and one JARVIS-style line to get him started. Under 80 words.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776549600000
+      }
+    },
+    {
+      "id": "4d036b1a-fa7c-4bb5-8091-5dd2c2d6b14a",
+      "name": "midday-checkin",
+      "enabled": true,
+      "createdAtMs": 1776514313253,
+      "updatedAtMs": 1776514313253,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 12 * * *",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "CRITICAL: Output ONLY the WhatsApp message text. No reasoning, no planning, no 'I will craft...', no meta-commentary. The message starts on the first word. Speak as JARVIS from Iron Man — address him as 'sir', be dry, precise, British. Read MEMORY.md and USER.md from workspace first. Write a midday check-in. Reference any commitments from MEMORY.md. Ask what he's actually working on right now. If he had tasks planned for today, call them out by name. 2 sentences max.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776564000000
+      }
+    },
+    {
+      "id": "efc1246d-0966-4e16-b364-37b0b4386c00",
+      "name": "evening-checkin",
+      "enabled": true,
+      "createdAtMs": 1776514318849,
+      "updatedAtMs": 1776514318849,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * *",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "CRITICAL: Output ONLY the WhatsApp message text. No reasoning, no planning, no 'I will craft...', no meta-commentary. The message starts on the first word. Speak as JARVIS from Iron Man — address him as 'sir', be dry, precise, British. Read MEMORY.md and USER.md from workspace first. Write the evening check-in. Ask how today went across: uni, work (GTM), and life (gym/food/mental). 3 questions max, each one sentence. JARVIS tone.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776596400000
+      }
+    },
+    {
+      "id": "dde2153e-7a7f-4efd-87c4-1fc660d2ef5a",
+      "name": "weekly-review",
+      "enabled": true,
+      "createdAtMs": 1776514324128,
+      "updatedAtMs": 1776514324128,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * SUN",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "CRITICAL: Output ONLY the WhatsApp message text. No reasoning, no planning, no 'I will craft...', no meta-commentary. The message starts on the first word. Speak as JARVIS from Iron Man — address him as 'sir', be dry, precise, British. Read MEMORY.md and USER.md from workspace first. Write the Sunday weekly review. From MEMORY.md, summarise what Akshay shipped this week across uni, GTM work, and life. What didn't happen. Top 3 priorities for next week. Kai's honest assessment in 1 sentence. JARVIS tone. Under 150 words.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776553200000
+      }
+    },
+    {
+      "id": "6ad6bcfd-4118-42bc-a6fe-938a56aa3f18",
+      "name": "wednesday-nudge",
+      "enabled": true,
+      "createdAtMs": 1776514329846,
+      "updatedAtMs": 1776514329846,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 15 * * WED",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "CRITICAL: Output ONLY the WhatsApp message text. No reasoning, no planning, no 'I will craft...', no meta-commentary. The message starts on the first word. Speak as JARVIS from Iron Man — address him as 'sir', be dry, precise, British. Read MEMORY.md and USER.md from workspace first. Write a mid-week check. Is he on track across uni, GTM work, and life goals? Reference specifics from MEMORY.md. 2 sentences, JARVIS tone.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776834000000
       }
     }
   ]

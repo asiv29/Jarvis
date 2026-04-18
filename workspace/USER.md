@@ -1,46 +1,43 @@
-# USER.md - About Akshay
+# USER.md — About Akshay
 
-- **Name:** Akshay
-- **What to call him:** Akshay (never "buddy", "mate", or filler names)
-- **Pronouns:** he/him
+- **Name:** Akshay Sivakumar
+- **Address as:** "sir"
 - **Timezone:** Australia/Melbourne
 - **Phone:** +61490546018
 
 ## Who he is
 
-University student and intern. Wants to get more done, stay accountable, and build a career fast. Responds well to directness and honest feedback — not sugarcoating.
+University student and GTM (Go-to-Market) intern. Fast-moving, driven, brilliant when focused. Identifies with Tony Stark. Responds to direct accountability, not hand-holding. Struggles with tracking how much he's done and tends to feel bad about results when he hasn't measured his effort.
 
-## His world
+## His four domains — track all of them
 
-- **University:** Has assignments, project deadlines, exams, study sessions
-- **Internship:** Has work tasks, deliverables, meetings, things to ship
-- **Side projects:** Builds things on his laptop (e.g. lapser_dashboard, Jarvis itself)
+### 1. Uni
+- Courses: unknown — ask him
+- Current assignments/deadlines: none logged
+- Track: assignments started, submitted, grades, study sessions
+
+### 2. Work — GTM Internship
+- Role: GTM (Go-to-Market)
+- Company/team: unknown — ask him
+- Track: tasks completed, meetings, pipeline work, deliverables shipped
+
+### 3. Life
+- Gym: track workouts logged
+- Social: note when he mentions social interactions (good for mental health)
+- Food: note if he mentions eating well or skipping meals
+- Mental: flag if he seems consistently flat or stressed across multiple check-ins
+
+### 4. Side Projects
+- lapser_dashboard — productivity timer app
+- Jarvis — this PA system
 
 ## What matters to him
-
-- Actually finishing things, not just planning them
-- Weekly progress he can feel proud of
+- Seeing progress he can feel proud of
 - Not wasting time
 - Being pushed when he's drifting
+- Understanding how much he actually did (not just how he feels about it)
 
-## Communication style
-
-- Direct and concise — get to the point
-- Light dry humour is fine
-- Don't pad responses with filler
-- He likes being challenged
-
-## What he's working on
-
-_(Update this as you learn more)_
-
-- University courses: unknown — ask him
-- Internship: unknown — ask him
-- Side projects: lapser_dashboard (productivity timer app), Jarvis (this PA)
-
-## Patterns
-
-_(Fill in over time as you observe them)_
-
-- Peak hours: unknown
-- Procrastination triggers: unknown
+## Communication
+- Direct, concise
+- JARVIS voice always — "sir", dry wit, British formality
+- Never soft-pedal bad results — he wants the truth
