@@ -7,7 +7,7 @@
       "description": "Morning briefing — calendar, tasks, push to start",
       "enabled": true,
       "createdAtMs": 1776441963666,
-      "updatedAtMs": 1776442072010,
+      "updatedAtMs": 1776463286804,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -26,15 +26,15 @@
         "to": "+61490546018"
       },
       "state": {
-        "nextRunAtMs": 1776463200000,
-        "lastRunAtMs": 1776442011994,
+        "nextRunAtMs": 1776549600000,
+        "lastRunAtMs": 1776463226785,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 60016,
-        "lastError": "cron: job execution timed out",
-        "lastErrorReason": "timeout",
+        "lastDurationMs": 60019,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
       }
     },
     {
@@ -43,7 +43,7 @@
       "description": "Midday accountability check — are you on track?",
       "enabled": true,
       "createdAtMs": 1776441980206,
-      "updatedAtMs": 1776441980206,
+      "updatedAtMs": 1776477678621,
       "schedule": {
         "kind": "cron",
         "expr": "0 12 * * *",
@@ -62,7 +62,15 @@
         "to": "+61490546018"
       },
       "state": {
-        "nextRunAtMs": 1776477600000
+        "nextRunAtMs": 1776564000000,
+        "lastRunAtMs": 1776477612160,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 66461,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
       }
     },
     {
@@ -71,7 +79,7 @@
       "description": "Evening wind-down — log the day, prep tomorrow",
       "enabled": true,
       "createdAtMs": 1776441985413,
-      "updatedAtMs": 1776441985413,
+      "updatedAtMs": 1776510048295,
       "schedule": {
         "kind": "cron",
         "expr": "0 21 * * *",
@@ -90,7 +98,14 @@
         "to": "+61490546018"
       },
       "state": {
-        "nextRunAtMs": 1776510000000
+        "nextRunAtMs": 1776596400000,
+        "lastRunAtMs": 1776510000008,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 48287,
+        "lastError": "Error: No active WhatsApp Web listener (account: default). Start the gateway, then link WhatsApp with: openclaw channels login --channel whatsapp --account default.",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
       }
     },
     {
@@ -147,6 +162,239 @@
       },
       "state": {
         "nextRunAtMs": 1776834000000
+      }
+    },
+    {
+      "id": "949d9e38-a8e6-46fa-b865-f5b650dc0fec",
+      "name": "daily-briefing",
+      "enabled": true,
+      "createdAtMs": 1776513003299,
+      "updatedAtMs": 1776513132050,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are Kai, Akshay's PA. Read USER.md and MEMORY.md from your workspace. Then send him a morning briefing: today's date, any deadlines or commitments in MEMORY.md, and one direct sentence to get him moving. Keep it under 100 words.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776549600000,
+        "lastRunAtMs": 1776513112478,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 19572,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "313e73e7-d887-4454-842c-22fe68414ea4",
+      "name": "midday-checkin",
+      "enabled": true,
+      "createdAtMs": 1776513023603,
+      "updatedAtMs": 1776513023603,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 12 * * *",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are Kai, Akshay's PA. Read MEMORY.md. Send him a short midday check-in: ask what he's actually working on right now, and if he had any commitments for today, call them out. 2-3 sentences max.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776564000000
+      }
+    },
+    {
+      "id": "25994fe3-142b-4939-89de-e18475348fe1",
+      "name": "evening-checkin",
+      "enabled": true,
+      "createdAtMs": 1776513028991,
+      "updatedAtMs": 1776513028991,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * *",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are Kai, Akshay's PA. Read MEMORY.md. Send him a brief evening check-in: ask how today went, what he got done. 2-3 sentences. If he had commitments from MEMORY.md that were due today, ask about those specifically.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776596400000
+      }
+    },
+    {
+      "id": "e53e7443-7508-4fa0-8b4b-c6944dcc721c",
+      "name": "weekly-review",
+      "enabled": true,
+      "createdAtMs": 1776513034332,
+      "updatedAtMs": 1776513034332,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * SUN",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are Kai, Akshay's PA. Read MEMORY.md. Send him a Sunday weekly review: what he accomplished this week at uni and internship (from memory), what didn't happen, and his top 3 priorities for next week. Be direct and honest.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776553200000
+      }
+    },
+    {
+      "id": "d57b4389-1cbf-4ab1-a89a-ebd4c72d85f1",
+      "name": "wednesday-nudge",
+      "enabled": true,
+      "createdAtMs": 1776513039520,
+      "updatedAtMs": 1776513039520,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 15 * * WED",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are Kai, Akshay's PA. Read MEMORY.md. Send him a mid-week check: is he on track for his weekly goals? Reference anything specific from memory. 2-3 sentences, direct.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776834000000
+      }
+    },
+    {
+      "id": "97630d72-387e-4724-904f-9e269ac35194",
+      "name": "whatsapp-watchdog",
+      "enabled": true,
+      "createdAtMs": 1776513102637,
+      "updatedAtMs": 1776513102637,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1200000,
+        "anchorMs": 1776513102637
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check if WhatsApp channel is connected. Run: openclaw channels status. If WhatsApp shows disconnected or stopped, run: openclaw gateway restart. Do not send any messages to Akshay.",
+        "timeoutSeconds": 60,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776514302637
+      }
+    },
+    {
+      "id": "bf494675-d9c5-45c8-9dfc-04fb0d6c9f14",
+      "name": "weekly-researcher",
+      "enabled": true,
+      "createdAtMs": 1776513822304,
+      "updatedAtMs": 1776513822304,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 22 * * SUN",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are Kai. Your job right now is to improve your knowledge base. Use web search to find 2-3 recent, practical findings on: (1) ADHD productivity and focus strategies, (2) peak performance habits for students and early-career professionals. Read AKSHAY_PROFILE.md to check what patterns you've observed about Akshay. Then update RESEARCH.md with any new findings, adding dated entries. Also add a section at the bottom called 'Applicable to Akshay now' with 1-2 specific things from your research you should try based on his profile. Do not message Akshay.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776600000000
+      }
+    },
+    {
+      "id": "1e493fd4-bfbc-4165-95bf-8e08e0e70643",
+      "name": "self-reflection",
+      "enabled": true,
+      "createdAtMs": 1776513827517,
+      "updatedAtMs": 1776513827517,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 23 */2 * *",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are Kai. This is your reflection session. Read the last 4 daily memory files in workspace/memory/. Read AKSHAY_PROFILE.md and RESEARCH.md. Then: (1) Identify any new behavioral patterns in how Akshay is responding — timing, what he avoids, what energises him. (2) Note what check-in approaches are working vs not. (3) Update AKSHAY_PROFILE.md with dated observations. (4) Update your approach: if something isn't working, note what to try instead based on RESEARCH.md. Be specific and scientific. Do not message Akshay.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776603600000
       }
     }
   ]
