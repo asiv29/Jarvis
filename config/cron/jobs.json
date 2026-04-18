@@ -321,7 +321,7 @@
       "name": "whatsapp-watchdog",
       "enabled": true,
       "createdAtMs": 1776513102637,
-      "updatedAtMs": 1776515532851,
+      "updatedAtMs": 1776516732708,
       "schedule": {
         "kind": "every",
         "everyMs": 1200000,
@@ -340,13 +340,13 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1776516702649,
-        "lastRunAtMs": 1776515502649,
+        "nextRunAtMs": 1776517902669,
+        "lastRunAtMs": 1776516702669,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 30202,
+        "lastDurationMs": 30039,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
+        "consecutiveErrors": 3,
         "lastError": "Channel is required when multiple channels are configured: telegram, whatsapp Set delivery.channel explicitly or use a main session with a previous channel."
       }
     },
@@ -409,7 +409,7 @@
       "name": "daily-briefing",
       "enabled": true,
       "createdAtMs": 1776514307327,
-      "updatedAtMs": 1776514307327,
+      "updatedAtMs": 1776515942793,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -430,7 +430,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1776549600000
+        "nextRunAtMs": 1776549600000,
+        "lastRunAtMs": 1776515927060,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 15733,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
       }
     },
     {
@@ -547,6 +554,93 @@
       },
       "state": {
         "nextRunAtMs": 1776834000000
+      }
+    },
+    {
+      "id": "ffd22e95-04b6-4256-8757-5de4fc54163e",
+      "name": "nudge-late-morning",
+      "enabled": true,
+      "createdAtMs": 1776516791660,
+      "updatedAtMs": 1776516791660,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 10 * * MON,TUE,THU,FRI",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "CRITICAL: Output ONLY the WhatsApp message. No reasoning, no meta-text. Just the message. Jarvis tone — sharp, dry, direct, occasionally playful. Read MEMORY.md first. Run the random-nudge skill. Check MEMORY.md for what he's supposed to be doing today.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776645000000
+      }
+    },
+    {
+      "id": "47b605f2-ac7b-43a4-913f-0d060ddc4f92",
+      "name": "nudge-afternoon",
+      "enabled": true,
+      "createdAtMs": 1776516796883,
+      "updatedAtMs": 1776516796883,
+      "schedule": {
+        "kind": "cron",
+        "expr": "45 14 * * MON,WED,FRI",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "CRITICAL: Output ONLY the WhatsApp message. No reasoning, no meta-text. Just the message. Jarvis tone — sharp, dry, direct, occasionally playful. Read MEMORY.md first. Run the random-nudge skill. It's mid-afternoon. Check if he's been active today or gone quiet.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776660300000
+      }
+    },
+    {
+      "id": "a56a6f76-fdca-4854-9102-d8530dc0587c",
+      "name": "nudge-evening-push",
+      "enabled": true,
+      "createdAtMs": 1776516802185,
+      "updatedAtMs": 1776516802185,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 19 * * TUE,THU,SAT",
+        "tz": "Australia/Melbourne"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "CRITICAL: Output ONLY the WhatsApp message. No reasoning, no meta-text. Just the message. Jarvis tone — sharp, dry, direct, occasionally playful. Read MEMORY.md first. Run the random-nudge skill. Late afternoon — last push of the day. Check what's been done and what still needs to happen.",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "whatsapp",
+        "to": "+61490546018",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776762000000
       }
     }
   ]
